@@ -22,6 +22,7 @@ end
 
 return {
   { "folke/lazy.nvim", version = "*" },
+<<<<<<< HEAD
   { "LazyVim/LazyVim", priority = 10000, lazy = false, opts = {}, cond = true, version = "*" },
   {
     "folke/snacks.nvim",
@@ -58,4 +59,7 @@ return {
       },
     },
   },
+=======
+  { "Data8021/LazyVim", priority = 10000, lazy = false, config = true, cond = true, version = "*" },
+>>>>>>> a088c77 (fixed two wrong LazyVim pointers)
 }
