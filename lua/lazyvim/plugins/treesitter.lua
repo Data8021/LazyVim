@@ -20,6 +20,7 @@ return {
     dependencies = {
       {
         "nvim-treesitter/nvim-treesitter-textobjects",
+        dir = require("lazy-nix-helper").get_plugin_path("nvim-treesitter-textobjects"),
         config = function()
           -- When in diff mode, we want to use the default
           -- vim text objects c & C instead of the treesitter ones.
@@ -117,6 +118,7 @@ return {
   -- Show context of the current function
   {
     "nvim-treesitter/nvim-treesitter-context",
+    dir = require("lazy-nix-helper").get_plugin_path("nvim-treesitter-context"),
     event = "LazyFile",
     enabled = true,
     opts = { mode = "cursor", max_lines = 3 },
