@@ -33,6 +33,7 @@ return {
             },
           },
         },
+<<<<<<< HEAD
         -- Enable this to enable the builtin LSP inlay hints on Neovim >= 0.10.0
         -- Be aware that you also will need to properly configure your LSP server to
         -- provide the inlay hints.
@@ -97,6 +98,39 @@ return {
                   semicolon = "Disable",
                   arrayIndex = "Disable",
                 },
+        severity_sort = true,
+      },
+      -- Enable this to enable the builtin LSP inlay hints on Neovim >= 0.10.0
+      -- Be aware that you also will need to properly configure your LSP server to
+      -- provide the inlay hints.
+      inlay_hints = {
+        enabled = false,
+      },
+      -- add any global capabilities here
+      capabilities = {},
+      -- options for vim.lsp.buf.format
+      -- `bufnr` and `filter` is handled by the LazyVim formatter,
+      -- but can be also overridden when specified
+      format = {
+        formatting_options = nil,
+        timeout_ms = nil,
+      },
+      -- LSP Server Settings
+      ---@type lspconfig.options
+      servers = {
+        lua_ls = {
+          mason = false, -- set to false if you don't want this server to be installed with mason
+          -- Use this to add any additional keymaps
+          -- for specific lsp servers
+          ---@type LazyKeysSpec[]
+          -- keys = {},
+          settings = {
+            Lua = {
+              workspace = {
+                checkThirdParty = false,
+              },
+              completion = {
+                callSnippet = "Replace",
               },
             },
           },
@@ -268,8 +302,9 @@ return {
     opts_extend = { "ensure_installed" },
     opts = {
       ensure_installed = {
-        "stylua",
-        "shfmt",
+        --"stylua",
+        --"shfmt",
+        -- "flake8",
       },
     },
     ---@param opts MasonSettings | {ensure_installed: string[]}

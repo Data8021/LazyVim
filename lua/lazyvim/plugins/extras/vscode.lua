@@ -45,7 +45,7 @@ end
 
 return {
   {
-    "LazyVim/LazyVim",
+    "Data8021/LazyVim",
     config = function(_, opts)
       opts = opts or {}
       -- disable the colorscheme
@@ -55,6 +55,7 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter",
+    dir = require("lazy-nix-helper").get_plugin_path("nvim-treesitter"),
     opts = { highlight = { enable = false } },
   },
 }
