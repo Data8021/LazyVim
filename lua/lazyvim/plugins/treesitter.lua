@@ -6,7 +6,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     dir = require("lazy-nix-helper").get_plugin_path("nvim-treesitter"),
     version = false, -- last release is way too old and doesn't work on Windows
-    build = ":TSUpdate",
+    --build = ":TSUpdate",
     event = { "LazyFile", "VeryLazy" },
     init = function(plugin)
       -- PERF: add nvim-treesitter queries to the rtp and it's custom query predicates early
