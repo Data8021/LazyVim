@@ -62,6 +62,9 @@ return {
             },
           },
         },
+        nil_ls = {
+          mason = false, -- set to false if you don't want this server to be installed with mason
+        },
       },
       -- you can do any additional lsp server setup here
       -- return true if you don't want this server to be setup with lspconfig
