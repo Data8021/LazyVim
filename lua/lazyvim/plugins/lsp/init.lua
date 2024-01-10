@@ -154,6 +154,27 @@ return {
         nil_ls = {
           mason = false, -- set to false if you don't want this server to be installed with mason
         },
+        bashls = {
+          mason = false, -- set to false if you don't want this server to be installed with mason
+        },
+        cssls = {
+          mason = false, -- set to false if you don't want this server to be installed with mason
+        },
+        dockerls = {
+          mason = false, -- set to false if you don't want this server to be installed with mason
+        },
+        jsonls = {
+          mason = false, -- set to false if you don't want this server to be installed with mason
+        },
+        marksman = {
+          mason = false, -- set to false if you don't want this server to be installed with mason
+        },
+        vimls = {
+          mason = false, -- set to false if you don't want this server to be installed with mason
+        },
+        yamlls = {
+          mason = false, -- set to false if you don't want this server to be installed with mason
+        },
       },
       -- you can do any additional lsp server setup here
       -- return true if you don't want this server to be setup with lspconfig
