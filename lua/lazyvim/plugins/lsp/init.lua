@@ -151,6 +151,8 @@ return {
     end,
         nil = {
           mason = false,
+        nil_ls = {
+          mason = false, -- set to false if you don't want this server to be installed with mason
         },
       },
       -- you can do any additional lsp server setup here
