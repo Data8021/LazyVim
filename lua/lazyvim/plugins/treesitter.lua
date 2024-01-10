@@ -14,7 +14,6 @@ return {
   -- syntax highlighting.
   {
     "nvim-treesitter/nvim-treesitter",
-    dir = require("lazy-nix-helper").get_plugin_path("nvim-treesitter"),
     version = false, -- last release is way too old and doesn't work on Windows
     build = ":TSUpdate",
     event = { "LazyFile", "VeryLazy" },
@@ -33,7 +32,6 @@ return {
     dependencies = {
       {
         "nvim-treesitter/nvim-treesitter-textobjects",
-        dir = require("lazy-nix-helper").get_plugin_path("nvim-treesitter-textobjects"),
         config = function()
           -- When in diff mode, we want to use the default
           -- vim text objects c & C instead of the treesitter ones.
@@ -70,28 +68,28 @@ return {
       highlight = { enable = true },
       indent = { enable = true },
       ensure_installed = {
-        --"bash",
-        --"c",
-        --"diff",
-        --"html",
-        --"javascript",
-        --"jsdoc",
-        --"json",
-        --"jsonc",
-        --"lua",
-        --"luadoc",
-        --"luap",
-        --"markdown",
-        --"markdown_inline",
-        --"python",
-        --"query",
-        --"regex",
-        --"toml",
-        --"tsx",
-        --"typescript",
-        --"vim",
-        --"vimdoc",
-        --"yaml",
+        "bash",
+        "c",
+        "diff",
+        "html",
+        "javascript",
+        "jsdoc",
+        "json",
+        "jsonc",
+        "lua",
+        "luadoc",
+        "luap",
+        "markdown",
+        "markdown_inline",
+        "python",
+        "query",
+        "regex",
+        "toml",
+        "tsx",
+        "typescript",
+        "vim",
+        "vimdoc",
+        "yaml",
       },
       incremental_selection = {
         enable = true,
@@ -123,7 +121,6 @@ return {
 
   {
     "nvim-treesitter/nvim-treesitter-context",
-    dir = require("lazy-nix-helper").get_plugin_path("nvim-treesitter-context"),
     event = "LazyFile",
     enabled = true,
     config = function()
