@@ -46,7 +46,6 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter",
-    dir = require("lazy-nix-helper").get_plugin_path("nvim-treesitter"),
     opts = { highlight = { enable = false } },
   },
 }
