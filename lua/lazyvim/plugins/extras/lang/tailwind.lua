@@ -1,4 +1,18 @@
 return {
+  recommended = function()
+    return LazyVim.extras.wants({
+      root = {
+        "tailwind.config.js",
+        "tailwind.config.cjs",
+        "tailwind.config.mjs",
+        "tailwind.config.ts",
+        "postcss.config.js",
+        "postcss.config.cjs",
+        "postcss.config.mjs",
+        "postcss.config.ts",
+      },
+    })
+  end,
   {
     "neovim/nvim-lspconfig",
     opts = {
@@ -14,7 +28,7 @@ return {
       },
       setup = {
         tailwindcss = function(_, opts)
-          local tw = require("lspconfig.server_configurations.tailwindcss")
+          local tw = LazyVim.lsp.get_raw_config("tailwindcss")
           opts.filetypes = opts.filetypes or {}
 
           -- Add default filetypes
@@ -26,6 +40,17 @@ return {
             return not vim.tbl_contains(opts.filetypes_exclude or {}, ft)
           end, opts.filetypes)
 
+          -- Additional settings for Phoenix projects
+          opts.settings = {
+            tailwindCSS = {
+              includeLanguages = {
+                elixir = "html-eex",
+                eelixir = "html-eex",
+                heex = "html-eex",
+              },
+            },
+          }
+
           -- Add additional filetypes
           vim.list_extend(opts.filetypes, opts.filetypes_include or {})
         end,
@@ -34,8 +59,9 @@ return {
   },
   {
     "hrsh7th/nvim-cmp",
+    optional = true,
     dependencies = {
-      { "roobert/tailwindcss-colorizer-cmp.nvim", config = true },
+      { "roobert/tailwindcss-colorizer-cmp.nvim", opts = {} },
     },
     opts = function(_, opts)
       -- original LazyVim kind icon formatter

@@ -2,12 +2,12 @@ return {
   -- Tabnine cmp source
   {
     "nvim-cmp",
+    optional = true,
     dependencies = {
       {
         "tzachar/cmp-tabnine",
         build = {
           LazyVim.is_win() and "pwsh -noni .\\install.ps1" or "./install.sh",
-          ":CmpTabnineHub",
         },
         dependencies = "hrsh7th/nvim-cmp",
         opts = {
@@ -42,7 +42,7 @@ return {
     optional = true,
     event = "VeryLazy",
     opts = function(_, opts)
-      local icon = require("lazyvim.config").icons.kinds.TabNine
+      local icon = LazyVim.config.icons.kinds.TabNine
       table.insert(opts.sections.lualine_x, 2, LazyVim.lualine.cmp_source("cmp_tabnine", icon))
     end,
   },

@@ -7,10 +7,10 @@ return {
     "ggandor/flit.nvim",
     enabled = true,
     keys = function()
-      ---@type LazyKeys[]
+      ---@type LazyKeysSpec[]
       local ret = {}
       for _, key in ipairs({ "f", "F", "t", "T" }) do
-        ret[#ret + 1] = { key, mode = { "n", "x", "o" }, desc = key }
+        ret[#ret + 1] = { key, mode = { "n", "x", "o" } }
       end
       return ret
     end,
@@ -38,6 +38,7 @@ return {
   -- rename surround mappings from gs to gz to prevent conflict with leap
   {
     "echasnovski/mini.surround",
+    optional = true,
     opts = {
       mappings = {
         add = "gza", -- Add surrounding in Normal and Visual modes
@@ -48,6 +49,9 @@ return {
         replace = "gzr", -- Replace surrounding
         update_n_lines = "gzn", -- Update `n_lines`
       },
+    },
+    keys = {
+      { "gz", "", desc = "+surround" },
     },
   },
 
